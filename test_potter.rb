@@ -13,7 +13,7 @@ class TestPotter < Test::Unit::TestCase
     assert_equal 8, basket([5])
   end
 
-  def test_to_equal_books_cost_16
+  def test_two_equal_books_cost_16
     assert_equal 16, basket([1,1])
     assert_equal 16, basket([5,5])
   end
@@ -22,5 +22,17 @@ class TestPotter < Test::Unit::TestCase
     assert_equal 15.2, basket([1,2])
     assert_equal 15.2, basket([4,5])
   end
+
+  def test_three_equal_books_cost_24
+    assert_equal 24, basket([1,1,1])
+    assert_equal 24, basket([5,5,5])
+  end
+
+  def test_three_different_books_get_10_percent_discount
+    assert_equal 21.6, basket([1,2,4])
+    assert_equal 21.6, basket([4,5,2])
+  end
+
+
 
 end
