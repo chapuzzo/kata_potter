@@ -43,6 +43,16 @@ class TestPotter < Test::Unit::TestCase
     assert_equal 25.6, basket([2,4,1,5])
   end
 
+  def test_five_equal_books_cost_40
+    assert_equal 40, basket([4,4,4,4,4])
+    assert_equal 40, basket([3,3,3,3,3])
+  end
+
+  def test_five_different_books_get_25_percent_discount
+    assert_equal 30, basket([1,2,3,4,5])
+    assert_equal 30, basket([2,4,1,5,3])
+  end
+
 
 
 end
