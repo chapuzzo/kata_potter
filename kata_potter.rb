@@ -6,7 +6,7 @@ def available_discount? number_of_books, number_of_different_books
 end
 
 def pack_price size
-  [0,0,15.2,21.6][size]
+  [0,0,15.2,21.6,25.6][size]
 end
 
 def basket books
