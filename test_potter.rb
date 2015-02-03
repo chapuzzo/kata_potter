@@ -2,7 +2,7 @@ require "test/unit"
 require_relative "./kata_potter"
 
 class TestPotter < Test::Unit::TestCase
-
+  self.test_order = :defined
 
   def test_empty_basket_result_0
     assert_equal 0, basket([])
@@ -53,6 +53,9 @@ class TestPotter < Test::Unit::TestCase
     assert_equal 30, basket([2,4,1,5,3])
   end
 
-
+  def test_best_available_discount_is_applied
+    assert_equal 51.2, basket([1,1,2,2,3,3,4,5])
+    assert_equal 51.2, basket([5,1,1,2,2,3,3,4])
+  end
 
 end
