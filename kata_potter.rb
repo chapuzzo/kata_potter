@@ -14,13 +14,13 @@ class PackSet
   end
 
   def add book
-    @packs.push [] if @packs.empty? or @packs.all?{|p| p.include?(book)}
+    @packs.push Array.new if @packs.empty? or @packs.all?{|p| p.include?(book)}
     @packs.each do |pack|
-      # p @packs
+      p @packs
       next if pack.include? book
       break if pack.push book
     end
-    # p @packs
+    p @packs
   end
 
   def price
