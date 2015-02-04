@@ -58,4 +58,24 @@ class TestPotter < Test::Unit::TestCase
     assert_equal 51.2, basket([5,1,1,2,2,3,3,4])
   end
 
+  def test_ultimate
+    assert_in_epsilon 76.8, basket([1,2,3,4,1,2,5,4,1,2,3,4]), 0.0001
+    assert_equal 76.8, basket([1,2,3,4,1,2,5,4,1,2,3,4])
+  end
+
+  def x_test_this_shoudn_t_be_a_test
+    book_ids = (1..5).to_a
+    pack_prices = [0, 8, 15.2, 21.6, 25.6, 30]
+    basket_items = []
+    basket_price = 0
+
+    (1..9).each do
+      current_baset = book_ids.sample(rand(6))
+      basket_items += current_baset
+      basket_price += pack_prices[current_baset.count]
+    end
+
+    assert_operator basket_price, :>=, basket(basket_items)
+  end
+
 end
