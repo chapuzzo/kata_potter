@@ -63,7 +63,7 @@ class TestPotter < Test::Unit::TestCase
     assert_equal 76.8, basket([1,2,3,4,1,2,5,4,1,2,3,4])
   end
 
-  def x_test_this_shoudn_t_be_a_test
+  def test_this_shoudn_t_be_a_test
     book_ids = (1..5).to_a
     pack_prices = [0, 8, 15.2, 21.6, 25.6, 30]
     basket_items = []

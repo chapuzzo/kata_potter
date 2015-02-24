@@ -1,6 +1,7 @@
 class Pack
-  def initialize
+  def initialize size
     @elements = []
+    @size = size
   end
 
   def price
@@ -25,5 +26,9 @@ class Pack
 
   def to_s
     @elements.join ' '
+  end
+
+  def full?
+    @elements.size == @size
   end
 end

@@ -15,7 +15,7 @@ def basket_split(books, size)
 end
 
 def basket(books)
-  result = books.permutation.map{|element|
+  result = books.permutation.to_a.uniq.map{|element|
     (0..element.length).map{|size|
       partial_total = 0
       basket_split(element, size).each{|books_splited|

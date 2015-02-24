@@ -1,11 +1,11 @@
 # Kata Potter
 require 'awesome_print'
-require './pack_set'
+require './basket'
 
 def basket books
-  ps = PackSet.new
-  books.sort.each do |book|
-    ps.add book
+  basket = Basket.new books.uniq.count
+  books.each do |book|
+    basket.add book
   end
-  ps.price.round(2)
+  basket.price.round(2)
 end
